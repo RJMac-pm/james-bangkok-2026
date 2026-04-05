@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bangkok &amp; Pattaya Stag Do 2026 — James Wells</title>
+<meta name="description" content="The Stag Do of James Wells — Bangkok &amp; Pattaya, 30 April – 4 May 2026">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black:    #080808;
+  --dark:     #0f0f0f;
+  --card:     #161616;
+  --border:   #2a2a2a;
+  --gold:     #C9922A;
+  --gold-lt:  #E8B94F;
+  --white:    #FFFFFF;
+  --grey:     #AAAAAA;
+  --muted:    #666666;
+  --serif:    'Playfair Display', 'Italiana', serif;
+  --sans:     'Raleway', 'Poppins', sans-serif;
+  --max-w:    900px;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+body.locked { overflow: hidden; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+/* ============================================================
+   COVER / ENVELOPE SCREEN
+   ============================================================ */
+#cover {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--black);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  overflow: hidden;
+}
+#cover.opening {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+#cover-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('stag_02.jpg');
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.18;
+  filter: saturate(0.3);
+}
+#cover-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 20%, #080808 80%);
+}
+/* Gold border frame */
+#cover-frame {
+  position: absolute;
+  inset: 24px;
+  border: 1px solid rgba(201,146,42,0.25);
+  pointer-events: none;
+}
+#cover-frame::before, #cover-frame::after {
+  content: '';
+  position: absolute;
+  width: 20px; height: 20px;
+  border-color: var(--gold);
+  border-style: solid;
+}
+#cover-frame::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+#cover-frame::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+#cover-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 40px 30px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.cover-flag {
+  font-size: 36px;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.cover-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.cover-title-small {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 8px;
+}
+.cover-name {
+  font-family: var(--serif);
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 6px;
+  text-shadow: 0 0 60px rgba(232,185,79,0.2);
+}
+.cover-name span { color: var(--gold-lt); }
+.cover-divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 20px auto;
+}
+.cover-dates {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-bottom: 6px;
+}
+.cover-subtitle {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-style: italic;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 40px;
+}
+#open-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+#open-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+#open-btn:hover { color: var(--black); }
+#open-btn:hover::before { transform: scaleX(1); }
+#open-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; transition: transform 0.3s; }
+#open-btn:hover svg { transform: translateX(4px); }
+.cover-scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.cover-scroll-hint.visible { opacity: 1; }
+.cover-scroll-hint::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+/* ============================================================
+   AUDIO PLAYER
+   ============================================================ */
+#audio-control {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 900;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(201,146,42,0.15);
+  border: 1px solid rgba(201,146,42,0.4);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+#audio-control.visible { opacity: 1; }
+#audio-control:hover { background: rgba(201,146,42,0.3); }
+#audio-control svg { width: 18px; height: 18px; fill: var(--gold); }
+
+/* ============================================================
+   BOTTOM NAV
+   ============================================================ */
+#bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 800;
+  background: rgba(8,8,8,0.92);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  padding: 0 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+#bottom-nav.visible { opacity: 1; transform: translateY(0); }
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+  padding: 6px 12px;
+  flex: 1;
+  text-align: center;
+}
+.nav-item.active { opacity: 1; }
+.nav-item svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+.nav-item span { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); }
+
+/* ============================================================
+   MAIN CONTENT
+   ============================================================ */
+#main-content {
+  opacity: 0;
+  transition: opacity 0.8s ease 0.3s;
+  padding-bottom: 80px;
+}
+#main-content.visible { opacity: 1; }
+
+/* ============================================================
+   SECTION HEADERS
+   ============================================================ */
+.section-header {
+  text-align: center;
+  padding: 80px 30px 50px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+.section-tag {
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.section-title span { color: var(--gold-lt); }
+.section-sub {
+  font-size: 14px;
+  color: var(--grey);
+  max-width: 500px;
+  margin: 0 auto;
+}
+.section-line {
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+  margin: 24px auto 0;
+}
+
+/* ============================================================
+   HOME / HERO
+   ============================================================ */
+#home {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+#home-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('stag_05.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  filter: saturate(0.4);
+  transform: scale(1.05);
+  transition: transform 8s ease;
+}
+#home.visible #home-bg { transform: scale(1); }
+#home-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(8,8,8,0.5) 0%, rgba(8,8,8,0.85) 100%);
+}
+.home-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 80px 30px 40px;
+  max-width: 600px;
+}
+.home-flag { font-size: 28px; margin-bottom: 20px; }
+.home-eyebrow {
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.home-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 9vw, 68px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.1;
+  margin-bottom: 8px;
+  color: var(--white);
+}
+.home-title em { color: var(--gold-lt); font-style: normal; }
+.home-dates {
+  font-size: clamp(12px, 2.5vw, 16px);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin: 20px 0 40px;
+}
+/* Countdown */
+.countdown {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 0 20px;
+}
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+.countdown-num {
+  font-family: var(--serif);
+  font-size: clamp(36px, 7vw, 56px);
+  font-weight: 400;
+  color: var(--gold-lt);
+  line-height: 1;
+}
+.countdown-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.countdown-sep {
+  font-size: 32px;
+  color: var(--gold);
+  opacity: 0.4;
+  align-self: flex-start;
+  margin-top: 8px;
+}
+.home-tagline {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-style: italic;
+  color: rgba(255,255,255,0.4);
+  padding-top: 20px;
+}
+
+/* ============================================================
+   ITINERARY
+   ============================================================ */
+#itinerary { background: var(--dark); }
+
+/* Day block */
+.day-block { border-top: 1px solid var(--border); }
+.day-hero {
+  position: relative;
+  height: clamp(260px, 40vh, 480px);
+  overflow: hidden;
+}
+.day-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.6) brightness(0.5);
+  transform: scale(1.05);
+  transition: transform 6s ease;
+}
+.day-block.in-view .day-hero img { transform: scale(1); }
+.day-hero-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 30px;
+  background: linear-gradient(to top, rgba(8,8,8,0.9) 0%, transparent 60%);
+  max-width: 100%;
+}
+.day-hero-text-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  width: 100%;
+}
+.day-number {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.day-title {
+  font-family: var(--serif);
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.1;
+}
+.day-date-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin-top: 6px;
+}
+
+/* Events within each day */
+.day-events {
+  padding: 10px 0 0;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+.event-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.event-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.event-time-col {
+  padding: 28px 16px 28px 24px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+.event-time-col::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 34px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--dark);
+}
+.event-time {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--gold);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.event-body { padding: 24px 24px 24px 28px; }
+.event-title {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.event-location {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.event-desc {
+  font-size: 13.5px;
+  color: var(--grey);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+.event-badge {
+  display: inline-block;
+  border: 1px solid rgba(201,146,42,0.4);
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+/* Event photo - full width image between events */
+.event-photo {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  max-height: 420px;
+}
+.event-photo img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.7);
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+.event-photo:hover img {
+  transform: scale(1.03);
+  filter: saturate(1);
+}
+.event-photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(8,8,8,0.85), transparent);
+  padding: 20px 24px 16px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+#gallery { background: var(--black); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  padding: 0 0 3px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.gallery-item {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  cursor: pointer;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: saturate(0.6) brightness(0.85);
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
+  filter: saturate(1) brightness(1);
+}
+.gallery-item:nth-child(1) { grid-column: span 2; aspect-ratio: 16/9; }
+.gallery-item:nth-child(6) { grid-column: span 2; aspect-ratio: 16/9; }
+
+/* Lightbox */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0,0,0,0.95);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#lightbox.open { display: flex; }
+#lightbox img {
+  max-width: 92vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border: 1px solid var(--border);
+}
+#lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 28px;
+  color: var(--grey);
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+#footer {
+  background: var(--dark);
+  text-align: center;
+  padding: 60px 30px;
+  border-top: 1px solid var(--border);
+}
+.footer-hashtag {
+  font-family: var(--serif);
+  font-size: clamp(20px, 4vw, 28px);
+  font-style: italic;
+  color: var(--gold-lt);
+  margin-bottom: 16px;
+}
+.footer-sub {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.footer-flags { font-size: 22px; margin-top: 20px; letter-spacing: 6px; }
+.footer-line {
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+  margin: 30px auto;
+}
+.footer-note {
+  font-size: 11px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ============================================================
+   FADE-IN ANIMATIONS
+   ============================================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+   ============================================================ */
+@media (max-width: 600px) {
+  .event-item { grid-template-columns: 72px 1fr; }
+  .event-time-col { padding: 20px 10px 20px 16px; }
+  .event-body { padding: 18px 16px 18px 20px; }
+  .event-title { font-size: 17px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item:nth-child(1) { grid-column: span 2; }
+  .gallery-item:nth-child(6) { grid-column: span 2; }
+  .day-hero { height: 220px; }
+  #cover-frame { inset: 14px; }
+  .event-photo img { height: 260px; }
+}
+@media (max-width: 380px) {
+  .event-item { grid-template-columns: 60px 1fr; }
+  .event-time-col::after { display: none; }
+}
+
+/* ============================================================
+   RESPONSIVE — DESKTOP
+   ============================================================ */
+@media (min-width: 900px) {
+  /* Itinerary event photos: constrain to content width */
+  .event-photo {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+  /* Day hero text aligns to max-width */
+  .day-hero-text {
+    padding: 40px calc((100% - var(--max-w)) / 2 + 30px);
+  }
+  /* Gallery: 4 columns on wide screens */
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .gallery-item:nth-child(1) { grid-column: span 2; aspect-ratio: 16/9; }
+  .gallery-item:nth-child(6) { grid-column: span 2; aspect-ratio: 16/9; }
+  /* Larger event font on desktop */
+  .event-title { font-size: 22px; }
+  .event-desc { font-size: 14.5px; }
+}
+</style>
+</head>
+<body class="locked">
+
+<!-- ============================================================
+     AUDIO
+     ============================================================ -->
+<audio id="bg-audio" loop preload="none">
+  <source src="one-night-in-bangkok_Ua0YFpag.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ============================================================
+     COVER SCREEN
+     ============================================================ -->
+<div id="cover">
+  <div id="cover-bg"></div>
+  <div id="cover-vignette"></div>
+  <div id="cover-frame"></div>
+  <div id="cover-content">
+    <div class="cover-flag">🇹🇭</div>
+    <p class="cover-label">You're Invited</p>
+    <p class="cover-title-small">The Stag Do of</p>
+    <h1 class="cover-name">James <span>Wells</span></h1>
+    <div class="cover-divider"></div>
+    <p class="cover-dates">Bangkok &amp; Pattaya</p>
+    <p class="cover-subtitle">30 April – 4 May 2026</p>
+    <button id="open-btn">
+      Open Invitation
+      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </button>
+  </div>
+  <div class="cover-scroll-hint" id="scroll-hint">Scroll<br></div>
+</div>
+
+<!-- ============================================================
+     AUDIO CONTROL
+     ============================================================ -->
+<div id="audio-control" title="Toggle music">
+  <svg id="audio-icon-play" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm-2-6.5v-7l6 3.5-6 3.5z"/></svg>
+  <svg id="audio-icon-pause" viewBox="0 0 24 24" style="display:none"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM9 8h2v8H9V8zm4 0h2v8h-2V8z"/></svg>
+</div>
+
+<!-- ============================================================
+     BOTTOM NAV
+     ============================================================ -->
+<nav id="bottom-nav">
+  <div class="nav-item active" onclick="scrollTo('#home')">
+    <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+    <span>Home</span>
+  </div>
+  <div class="nav-item" onclick="scrollTo('#itinerary')">
+    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    <span>Plan</span>
+  </div>
+  <div class="nav-item" onclick="scrollTo('#gallery')">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    <span>Gallery</span>
+  </div>
+  <div class="nav-item" onclick="scrollTo('#footer')">
+    <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+    <span>Cheers</span>
+  </div>
+</nav>
+
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<div id="main-content">
+
+  <!-- HOME -->
+  <section id="home">
+    <div id="home-bg"></div>
+    <div id="home-overlay"></div>
+    <div class="home-content">
+      <p class="home-eyebrow">The Last Great Adventure</p>
+      <h2 class="home-title">Bangkok<br>&amp; <em>Pattaya</em></h2>
+      <p class="home-dates">🇹🇭 30 April – 4 May 2026</p>
+      <div class="countdown" id="countdown">
+        <div class="countdown-unit"><span class="countdown-num" id="cd-days">--</span><span class="countdown-label">Days</span></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-label">Hours</span></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-label">Mins</span></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-label">Secs</span></div>
+      </div>
+      <p class="home-tagline">Five days. Two cities. One groom. Zero regrets (probably).</p>
+    </div>
+  </section>
+
+  <!-- ITINERARY -->
+  <section id="itinerary">
+    <div class="section-header fade-in">
+      <p class="section-tag">The Plan</p>
+      <h2 class="section-title">Bangkok &amp; Pattaya <span>Itinerary</span></h2>
+      <p class="section-sub">Four days. Memorise it. Then embrace the chaos.</p>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- ======================================================
+         DAY 1 — THURSDAY 30 APRIL
+         Hero: stag_09.png (cocktail bar — arrival evening vibes)
+         Event photo: stag_03.jpg (Bangkok neon night)
+         ====================================================== -->
+    <div class="day-block" id="day1">
+      <div class="day-hero">
+        <img src="stag_09.png" alt="Day 1 - Bangkok Arrival">
+        <div class="day-hero-text">
+          <div class="day-hero-text-inner">
+            <p class="day-number">Day 1 · Thursday 30 April</p>
+            <h3 class="day-title">Bangkok Arrival</h3>
+            <p class="day-date-label">The calm before the storm</p>
+          </div>
+        </div>
+      </div>
+      <div class="day-events">
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">Evening</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Welcome Rooftop Drinks</h4>
+            <p class="event-location">Bangkok · 49 Floors Up</p>
+            <p class="event-desc">Welcome drinks 49 floors above Bangkok with views that make you feel like you've earned something — even though you've just been on a plane. Everyone arrives, drinks get ordered, and somebody suggests "just a quiet one tonight." The group nods. Nobody means it. Get there early for a table.</p>
+            <span class="event-badge">🥂 Group Gathering</span>
+          </div>
+        </div>
+        <div class="event-photo">
+          <img src="stag_03.jpg" alt="Bangkok nightlife">
+          <div class="event-photo-caption">Bangkok · Night 1</div>
+        </div>
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">Night</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Drinks Around Sukhumvit</h4>
+            <p class="event-location">Bangkok</p>
+            <p class="event-desc">A few bars around the strip. A "relaxed" warm-up night that quietly turns into 2am. Classic. The real activities start tomorrow — or so you'll keep telling yourself.</p>
+            <span class="event-badge">🍺 Easy Night (Allegedly)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         DAY 2 — FRIDAY 1 MAY
+         Hero: stag_01.jpg (karting / action)
+         Event photos: stag_04.jpg (lunch), stag_11.png (BACCARAT nightclub)
+         ====================================================== -->
+    <div class="day-block" id="day2">
+      <div class="day-hero">
+        <img src="stag_01.jpg" alt="Day 2 - The Big One">
+        <div class="day-hero-text">
+          <div class="day-hero-text-inner">
+            <p class="day-number">Day 2 · Friday 1 May</p>
+            <h3 class="day-title">The Big One</h3>
+            <p class="day-date-label">From karts to clubs. Godspeed.</p>
+          </div>
+        </div>
+      </div>
+      <div class="day-events">
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">10:00am</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Topkart Bangkok</h4>
+            <p class="event-location">Highest Rated Track in Bangkok</p>
+            <p class="event-desc">4.9 stars. Long track, fast karts, absolutely zero sympathy for the groom. Whoever wins buys the first round. Whoever crashes (James) buys two. Book ahead — group slots go fast and nobody wants to spend the morning in a queue instead of a kart.</p>
+            <span class="event-badge">🏎️ Pre-Book Required</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">12:00pm</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Lunch</h4>
+            <p class="event-location">Nearby</p>
+            <p class="event-desc">Refuel. Someone will be walking like they aged 30 years from the karts. Someone else will insist they "went easy." Neither is true. Eat something substantial — tonight is long.</p>
+          </div>
+        </div>
+        <div class="event-photo">
+          <img src="stag_04.jpg" alt="Bangkok street food">
+          <div class="event-photo-caption">Bangkok · Refuel</div>
+        </div>
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">2:00pm</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Free Time</h4>
+            <p class="event-location">Hotel / Pool / Explore</p>
+            <p class="event-desc">Pool, hotel room, or a wander. Nap if you need to. You won't admit you napped, but you will nap.</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">5:00pm</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Sunset Rooftop</h4>
+            <p class="event-location">45 Floors Up · 360° Views</p>
+            <p class="event-desc">45 floors up. Bangkok stretches out beneath you. The sunset turns everything gold. Arrive right on opening to guarantee a table — it fills instantly and standing up here staring at someone else's seats is not the vibe. This is the group photo that makes everyone back home deeply envious. Take it.</p>
+            <span class="event-badge">🌅 Arrive at Opening</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">7:30pm</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Quilombo Bangkok</h4>
+            <p class="event-location">Thong Lo · Argentine Steakhouse</p>
+            <p class="event-desc">Argentine steakhouse in a dramatic castle-like venue. One of the best-reviewed restaurants in Bangkok. Steak, wine, speeches that are only slightly too personal. Book a table in advance — it fills up, and standing outside a castle waiting to eat is nobody's idea of a stag do.</p>
+            <span class="event-badge">🥩 Book in Advance</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">10:00pm</span></div>
+          <div class="event-body">
+            <h4 class="event-title">BACCARAT</h4>
+            <p class="event-location">Sukhumvit 24 · The Main Event</p>
+            <p class="event-desc">House and electronic music, strong DJs, a crowd that knows how to go. Reserve a table ahead — standing at the bar all night is not the vibe. Dress well enough to get in. Don't worry about staying that way.</p>
+            <span class="event-badge">🎧 Reserve a Table</span>
+          </div>
+        </div>
+        <div class="event-photo">
+          <img src="stag_11.png" alt="Bangkok nightclub">
+          <div class="event-photo-caption">Bangkok · The Night Doesn't End Here</div>
+        </div>
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">Late</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Night Ends When It Ends</h4>
+            <p class="event-location">Wherever Bangkok Takes You</p>
+            <p class="event-desc">No curfew. No promises. No scheduled end time. You'll know when it's over.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         DAY 3 — SATURDAY 3 MAY
+         Hero: stag_06.jpg (night streets)
+         Event photos: stag_07.jpg (Pattaya arrival), stag_10.png (Walking Street / Nana)
+         ====================================================== -->
+    <div class="day-block" id="day3">
+      <div class="day-hero">
+        <img src="stag_06.jpg" alt="Day 3 - Pattaya">
+        <div class="day-hero-text">
+          <div class="day-hero-text-inner">
+            <p class="day-number">Day 3 · Saturday 3 May</p>
+            <h3 class="day-title">Bangkok → Pattaya</h3>
+            <p class="day-date-label">New city. Same energy.</p>
+          </div>
+        </div>
+      </div>
+      <div class="day-events">
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">Morning</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Slow Start</h4>
+            <p class="event-location">Hotel</p>
+            <p class="event-desc">Late checkout. Strong coffee. Nobody talks until everyone is fed. Collective silence is respected. Pack your bags.</p>
+            <span class="event-badge">☕ Earned It</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">11am–12pm</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Minibus to Pattaya</h4>
+            <p class="event-location">~2 Hours · Bangkok → Pattaya</p>
+            <p class="event-desc">Chartered minibus departs around 11–12. Nap en route. Mandatory snacks. Someone will attempt to watch a film on their phone without headphones. Deal with it collectively.</p>
+          </div>
+        </div>
+        <div class="event-photo">
+          <img src="stag_07.jpg" alt="Pattaya arrival">
+          <div class="event-photo-caption">Pattaya · New City. New Rules.</div>
+        </div>
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">Afternoon</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Beach Club</h4>
+            <p class="event-location">Pattaya</p>
+            <p class="event-desc">Check in. Freshen up. Head straight to a beach club — pool, sun, cold drinks. The decompression phase. Scientifically necessary after two nights in Bangkok.</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">Evening</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Dinner Near Walking Street</h4>
+            <p class="event-location">Pattaya</p>
+            <p class="event-desc">Proper food before the night kicks off. You've learned your lesson from Day 2. Or you haven't. Either way, eat.</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">Night</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Walking Street</h4>
+            <p class="event-location">Pattaya's Main Strip</p>
+            <p class="event-desc">Bar crawl down the strip to find your bearings, then pick a home base. High energy, great DJs, strong reviews. What happens on Walking Street stays in Walking Street. This is not a rule, it's a survival strategy.</p>
+            <span class="event-badge">🌃 Pattaya Night</span>
+          </div>
+        </div>
+        <div class="event-photo">
+          <img src="stag_10.png" alt="Walking Street Pattaya">
+          <div class="event-photo-caption">Walking Street, Pattaya</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         DAY 4 — SUNDAY 4 MAY
+         Hero: stag_08.jpg (final/dramatic)
+         Event photo: stag_02.jpg (man at bar — rooftop/drinks)
+         ====================================================== -->
+    <div class="day-block" id="day4">
+      <div class="day-hero">
+        <img src="stag_08.jpg" alt="Day 4 - Final Day">
+        <div class="day-hero-text">
+          <div class="day-hero-text-inner">
+            <p class="day-number">Day 4 · Sunday 4 May</p>
+            <h3 class="day-title">The Final Chapter</h3>
+            <p class="day-date-label">Everything you've got, one last time.</p>
+          </div>
+        </div>
+      </div>
+      <div class="day-events">
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">Morning</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Breakfast &amp; Rehydration</h4>
+            <p class="event-location">Hotel</p>
+            <p class="event-desc">Nobody is moving fast. Order everything on the breakfast menu. Electrolytes are your friend. Don't ask how anyone's feeling.</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">11:00am</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Quad Biking</h4>
+            <p class="event-location">ATV &amp; Buggy Adventures, Pattaya</p>
+            <p class="event-desc">4.8 stars and nearly 2,000 reviews of people doing exactly what you're about to do. Book the 2-hour session — the shorter one gets mixed reviews and you'll want the full experience. If anyone falls off a quad, the story gets told at the wedding speech. No exceptions. Pre-book as group slots fill fast.</p>
+            <span class="event-badge">🏍️ Pre-Book Required</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">1:30pm</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Back to Hotel</h4>
+            <p class="event-location">Rest &amp; Recover</p>
+            <p class="event-desc">Shower. Lie flat. Scroll your phone. Tell yourself you're fine. You're fine.</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">4:00pm</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Sunset Rooftop</h4>
+            <p class="event-location">34th Floor · Pattaya Bay Views</p>
+            <p class="event-desc">Best views in Pattaya, across the bay to the horizon. Happy hour kicks in before sunset — arrive early for the best table AND the buy-one-get-one deal. This is the "we're actually going to miss each other" moment. Don't tell anyone.</p>
+            <span class="event-badge">🌅 Happy Hour · BOGO Drinks</span>
+          </div>
+        </div>
+        <div class="event-photo">
+          <img src="stag_02.jpg" alt="Rooftop drinks Pattaya">
+          <div class="event-photo-caption">Pattaya · 34th Floor, Sunset Drinks</div>
+        </div>
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">7:00pm</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Final Group Dinner</h4>
+            <p class="event-location">Make It Count</p>
+            <p class="event-desc">The last supper. The real speeches happen here — the ones that are too honest, too long, and finish to applause and one person wiping their eye. James pays for his own drinks. This is not negotiable.</p>
+            <span class="event-badge">🍾 Speeches Encouraged</span>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-time-col"><span class="event-time">9:30pm</span></div>
+          <div class="event-body">
+            <h4 class="event-title">Walking Street — Final Night</h4>
+            <p class="event-location">Pattaya</p>
+            <p class="event-desc">Go later. Stay later. Whatever is left of you after four days, put it all here. James gets married in eight days. This is your closing argument for his single life. Make it count.</p>
+            <span class="event-badge">🌙 The Last Dance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- GALLERY — all 11 images -->
+  <section id="gallery">
+    <div class="section-header fade-in">
+      <p class="section-tag">The Lads</p>
+      <h2 class="section-title">Our <span>Moments</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox('stag_10.png')"><img src="stag_10.png" alt="Walking Street" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox('stag_09.png')"><img src="stag_09.png" alt="Cocktail Bar" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox('stag_11.png')"><img src="stag_11.png" alt="Bangkok Nightclub" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox('stag_01.jpg')"><img src="stag_01.jpg" alt="Karting" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox('stag_02.jpg')"><img src="stag_02.jpg" alt="Rooftop Bar" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox('stag_03.jpg')"><img src="stag_03.jpg" alt="Bangkok Night" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox('stag_04.jpg')"><img src="stag_04.jpg" alt="Street Food" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox('stag_05.jpg')"><img src="stag_05.jpg" alt="Bangkok" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox('stag_06.jpg')"><img src="stag_06.jpg" alt="Pattaya Night" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox('stag_07.jpg')"><img src="stag_07.jpg" alt="Pattaya" loading="lazy"></div>
+      <div class="gallery-item" onclick="openLightbox('stag_08.jpg')"><img src="stag_08.jpg" alt="Final Day" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section id="footer">
+    <div class="footer-hashtag">#JamesBangkok2026</div>
+    <p class="footer-sub">James George Wells · Stag Do</p>
+    <div class="footer-line"></div>
+    <p class="footer-note">What happens in Bangkok &amp; Pattaya<br>gets told at the wedding speech.</p>
+    <div class="footer-flags">🇹🇭 🥂 🇹🇭</div>
+  </section>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+/* ============================================================
+   OPEN INVITATION
+   ============================================================ */
+const cover = document.getElementById('cover');
+const mainContent = document.getElementById('main-content');
+const bottomNav = document.getElementById('bottom-nav');
+const audioControl = document.getElementById('audio-control');
+const scrollHint = document.getElementById('scroll-hint');
+const audio = document.getElementById('bg-audio');
+
+document.getElementById('open-btn').addEventListener('click', function() {
+  cover.classList.add('opening');
+  setTimeout(() => {
+    cover.style.display = 'none';
+    document.body.classList.remove('locked');
+    mainContent.classList.add('visible');
+    bottomNav.classList.add('visible');
+    audioControl.classList.add('visible');
+    audio.volume = 0.5;
+    audio.play().catch(() => {});
+    updateAudioIcon();
+    scrollHint.classList.add('visible');
+    setTimeout(() => scrollHint.classList.remove('visible'), 3000);
+    document.getElementById('home').classList.add('visible');
+  }, 800);
+});
+
+/* ============================================================
+   AUDIO TOGGLE
+   ============================================================ */
+function updateAudioIcon() {
+  document.getElementById('audio-icon-play').style.display = audio.paused ? 'block' : 'none';
+  document.getElementById('audio-icon-pause').style.display = audio.paused ? 'none' : 'block';
+}
+document.getElementById('audio-control').addEventListener('click', function() {
+  if (audio.paused) { audio.play(); } else { audio.pause(); }
+  updateAudioIcon();
+});
+
+/* ============================================================
+   COUNTDOWN
+   ============================================================ */
+const targetDate = new Date('2026-04-30T19:00:00+07:00').getTime();
+function updateCountdown() {
+  const now = Date.now();
+  const diff = targetDate - now;
+  if (diff <= 0) {
+    ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '0');
+    return;
+  }
+  document.getElementById('cd-days').textContent  = String(Math.floor(diff / 86400000)).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2,'0');
+  document.getElementById('cd-mins').textContent  = String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0');
+  document.getElementById('cd-secs').textContent  = String(Math.floor((diff % 60000) / 1000)).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* ============================================================
+   SCROLL ANIMATIONS (IntersectionObserver)
+   ============================================================ */
+function scrollTo(id) {
+  document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+const fadeObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => fadeObs.observe(el));
+
+const eventObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      eventObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.event-item').forEach(el => eventObs.observe(el));
+
+const dayObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('in-view');
+    else e.target.classList.remove('in-view');
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.day-block').forEach(el => dayObs.observe(el));
+
+const sections = ['home', 'itinerary', 'gallery', 'footer'];
+const navItems = document.querySelectorAll('.nav-item');
+const secObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const sectionIdx = sections.indexOf(e.target.id);
+      if (sectionIdx >= 0 && navItems[sectionIdx]) {
+        navItems.forEach(n => n.classList.remove('active'));
+        navItems[sectionIdx].classList.add('active');
+      }
+    }
+  });
+}, { threshold: 0.3 });
+sections.forEach(id => { const el = document.getElementById(id); if (el) secObs.observe(el); });
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
